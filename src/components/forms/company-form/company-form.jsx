@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { putData } from "../../../store/api-actions";
 import { findId } from "../../../utils/utils";
 import Loader from "../../loader/loader";
+import { nanoid } from "nanoid";
 
 const CompanyForm = () => {
   // содердимое полей формы привязно к state
@@ -37,7 +38,7 @@ const CompanyForm = () => {
         setError(false);
         setLoading(true);
         // вычисление id для нового объекта
-        const id = findId(allCompanies);
+        const id = nanoid();
 
         // создание объекта новой компании
         const newCompany = {
