@@ -42,7 +42,7 @@ const CompanyTable = ({ data }) => {
   const onDeleteCompanies = () => {
     setLoading(true);
     if (selectedCompanies.length === data.length) {
-      onRemoveAndPushData([], setLoading);
+      alert("Невозможно удалить все компании");
     } else {
       const diff = getDifference(data, selectedCompanies);
       onRemoveAndPushData(diff, setLoading);
